@@ -1,10 +1,10 @@
-console.log('Running');
+'use strict';
 
-let template = React.createElement(
-	"p",
-	{ id: "identifier" },
-	"This is JSX"
+var template = React.createElement(
+  'p',
+  null,
+  'This is changed again'
 );
-let appRoot = document.getElementById('app');
+var appRoot = document.getElementById('app');
 
 ReactDOM.render(template, appRoot);
