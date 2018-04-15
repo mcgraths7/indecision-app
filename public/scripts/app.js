@@ -1,32 +1,67 @@
 'use strict';
 
-// let template = ( 
-// 	<div>
-// 		<h1>Steven McGrath</h1> 
-// 		<p>This is changed again</p>
-// 	</div>
-// );
+var app = {
+	title: 'Title',
+	subtitle: 'Subtitle'
+};
 
-var myTemplate = React.createElement(
+var user = {
+	name: 'Steven McGrath',
+	age: 27,
+	location: 'North Carolina'
+};
+
+// function getLocation(location) {
+// 	return location ? location : 'Unknown';
+// }
+
+// function getLocation(location) {
+// 	return location ? <p>Location: {location}</p> : undefined;
+// }
+// function getAge(age) {
+// 	return age ? <p>Age: {age}</p> : undefined;
+// }
+// function getName(name) {
+// 	return name ? <h1>{name}</h1> : undefined;
+// }
+
+var template = React.createElement(
 	'div',
 	null,
 	React.createElement(
 		'h1',
 		null,
-		'Steven McGrath'
+		app.title
 	),
 	React.createElement(
 		'p',
 		null,
-		'Age: 27'
-	),
-	React.createElement(
-		'p',
-		null,
-		'Location: North Carolina'
+		app.subtitle
 	)
+);
+
+var templateTwo = React.createElement(
+	'div',
+	null,
+	user.name ? React.createElement(
+		'h1',
+		null,
+		user.name
+	) : 'Anonymous',
+	user.age ? React.createElement(
+		'p',
+		null,
+		'Age: ',
+		user.age
+	) : undefined,
+	user.location ? React.createElement(
+		'p',
+		null,
+		'Location: ',
+		user.location
+	) : undefined
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(myTemplate, appRoot);
+ReactDOM.render(templateTwo, appRoot);
